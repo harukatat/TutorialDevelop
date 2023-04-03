@@ -76,7 +76,7 @@ public class UserController {
     public String postUser(@Validated User user, BindingResult res,@PathVariable("id") Integer id, Model model)  {
         if(res.hasErrors()) {
             // エラーあり
-            return getUser(user, id, model);
+            return getUser(user, null, model);
         }
         // User登録
         service.saveUser(user);
